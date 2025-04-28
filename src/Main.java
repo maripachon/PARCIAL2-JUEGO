@@ -1,15 +1,21 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Robot robot = new Robot();
+        Hombre hombre1 = new Hombre("Carlos");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        // Hombre 1 juega con el robot
+        hombre1.jugarConRobot(robot);
+
+        // Hombre 2 (Luis) toma el control del robot
+        if (robot.estaDormido()) {
+            System.out.println("\n" + "Luis toma el control del robot");
+            robot.estaDormido();
         }
+
+        hombre1.jugarConRobot(robot);
+
+        System.out.println("\nFin del programa.");
     }
 }
